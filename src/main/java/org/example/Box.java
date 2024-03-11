@@ -37,15 +37,31 @@ public class Box {
     }
 }
 
-// Здесь класс Box расширяется с целью включения члена weight.
+// Теперь класс BoxWeight полностью реализует все конструкторы.
 class BoxWeight extends Box {
     double weight; // вес коробки
 
-    // Конструктор для BoxWeight.
+    // Конструктор, применяемый для клонирования объекта.
+    BoxWeight(BoxWeight ob) { // передать объект конструктору
+        super(ob);
+        weight = ob.weight;
+    }
+
+    // Конструктор, используемый в случае указания всех параметров.
     BoxWeight(double w, double h, double d, double m) {
-        width = w;
-        height = h;
-        depth = d;
+        super(w, h, d); // вызвать конструктор суперкласса
+        weight = m;
+    }
+
+    // Стандартный конструктор.
+    BoxWeight() {
+        super();
+        weight = -1;
+    }
+
+    // Конструктор, используемый в случае создания объекта кубической коробки.
+    BoxWeight(double len, double m) {
+        super(len);
         weight = m;
     }
 }
