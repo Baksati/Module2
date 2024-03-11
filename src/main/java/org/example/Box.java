@@ -1,9 +1,11 @@
 package org.example;
-// В этой программе используется наследование для расширения класса Box.
+// Расширение класс BoxWeight с целью включения стоимости доставки.
+
+// Начать с Box.
 public class Box {
-    double width;
-    double height;
-    double depth;
+    private double width;
+    private double height;
+    private double depth;
 
     // Конструктор, применяемый для клонирования объекта.
     Box(Box ob) { // передать объект конструктору
@@ -37,7 +39,7 @@ public class Box {
     }
 }
 
-// Теперь класс BoxWeight полностью реализует все конструкторы.
+// Добавить вес.
 class BoxWeight extends Box {
     double weight; // вес коробки
 
@@ -63,5 +65,35 @@ class BoxWeight extends Box {
     BoxWeight(double len, double m) {
         super(len);
         weight = m;
+    }
+}
+
+// Добавить стоимость доставки.
+class Shipment extends BoxWeight {
+    double cost;
+
+    // Конструктор, применяемый для клонирования объекта.
+    Shipment(Shipment ob) { // передать объект конструктору
+        super(ob);
+        cost = ob.cost;
+    }
+
+    // Конструктор, используемый в случае указания всех параметров.
+    Shipment(double w, double h, double d,
+             double m, double c) {
+        super(w, h, d, m); // вызвать конструктор суперкласса
+        cost = c;
+    }
+
+    // Стандартный конструктор.
+    Shipment() {
+        super();
+        cost = - 1;
+    }
+
+    // Конструктор, используемый в случае создания объекта кубической коробки.
+    Shipment(double len, double m, double c) {
+        super(len, m);
+        cost = c;
     }
 }
