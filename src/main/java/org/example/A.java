@@ -14,6 +14,7 @@ public class A {
     }
 }
 
+// Создать подкласс путем раширения класса A.
 class B extends A {
     int k;
 
@@ -22,10 +23,9 @@ class B extends A {
         k = c;
     }
 
-    // Отобразить k - переопределяет show() в A.
-    void show() {
-        super.show(); // вызывает show() из A.
-        System.out.println("k:" + k);
+    // Перегрузить show().
+    void show(String msg) {
+        System.out.println(msg + k);
     }
 }
 
