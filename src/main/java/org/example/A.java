@@ -1,31 +1,23 @@
 package org.example;
-// Переопределение методов.
+// Динамическая диспетчеризация методов.
 public class A {
-    int i, j;
-
-    A(int a, int b) {
-        i = a;
-        j = b;
-    }
-
-    // Отобразить значения i и j.
-    void show() {
-        System.out.println("i и j:" + i + "" + j);
+    void callme() {
+        System.out.println("Внутри метода callme() класса A");
     }
 }
 
-// Создать подкласс путем раширения класса A.
 class B extends A {
-    int k;
-
-    B(int a, int b, int c) {
-        super(a, b);
-        k = c;
-    }
-
-    // Перегрузить show().
-    void show(String msg) {
-        System.out.println(msg + k);
+    // Переопределить callme().
+    void callme() {
+        System.out.println("Внтури метода callme() класса B.");
     }
 }
+
+class C extends A {
+    // Переопределить callme().
+    void callme() {
+        System.out.println("Внутри метода callme() класса C.");
+    }
+}
+
 
