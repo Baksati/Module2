@@ -24,6 +24,7 @@ class B extends A {
 
     // Отобразить k - переопределяет show() в A.
     void show() {
+        super.show(); // вызывает show() из A.
         System.out.println("k:" + k);
     }
 }
