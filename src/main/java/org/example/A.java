@@ -1,22 +1,30 @@
 package org.example;
-// Демонстрация выполнения конструктора.
-// Создать суперкласс.
+// Переопределение методов.
 public class A {
-    A() {
-        System.out.println("Внутри конструктора A.");
+    int i, j;
+
+    A(int a, int b) {
+        i = a;
+        j = b;
+    }
+
+    // Отобразить значения i и j.
+    void show() {
+        System.out.println("i и j:" + i + "" + j);
     }
 }
 
-// Создать подкласс путем расширения A.
 class B extends A {
-    B() {
-        System.out.println("Внутри конструктора B.");
+    int k;
+
+    B(int a, int b, int c) {
+        super(a, b);
+        k = c;
+    }
+
+    // Отобразить k - переопределяет show() в A.
+    void show() {
+        System.out.println("k:" + k);
     }
 }
 
-// Созать еще один подкласс путем расширения B.
-class C extends B {
-    C() {
-        System.out.println("Внутри конструктора C.");
-    }
-}
