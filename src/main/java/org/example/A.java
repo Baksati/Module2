@@ -1,20 +1,22 @@
 package org.example;
+// Демонстрация выполнения конструктора.
 // Создать суперкласс.
 public class A {
-    int i, j;
-    void showij() {
-        System.out.println("i и j:" + i + "" + j);
+    A() {
+        System.out.println("Внутри конструктора A.");
     }
 }
 
-// Создать подкласс путем расширения класса A.
+// Создать подкласс путем расширения A.
 class B extends A {
-    int k;
-
-    void showk() {
-        System.out.println("k:" + k);
+    B() {
+        System.out.println("Внутри конструктора B.");
     }
-    void sum() {
-        System.out.println("i + j + k:" + (i + j + k));
+}
+
+// Созать еще один подкласс путем расширения B.
+class C extends B {
+    C() {
+        System.out.println("Внутри конструктора C.");
     }
 }
