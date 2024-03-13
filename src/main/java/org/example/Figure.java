@@ -1,6 +1,6 @@
 package org.example;
 // Использование полиморфизма во время выполнения.
-public class Figure {
+abstract class Figure {
     double dim1;
     double dim2;
 
@@ -9,10 +9,8 @@ public class Figure {
         dim2 = b;
     }
 
-    double area() {
-        System.out.println("Площадь для Figure не определена.");
-        return 0;
-    }
+    // Теперь area() - абстрактный метод.
+    abstract double area();
 }
 
 class Rectangle extends Figure {
