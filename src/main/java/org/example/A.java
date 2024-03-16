@@ -1,19 +1,17 @@
 package org.example;
-// Простая демонстрация применения abstract.
-abstract class A {
-    abstract void callme();
+// Пример вложенного интерфейса
+// Класс A содержит член-интерфейс.
 
-    // Конкретные методы в абстрактных классах по-прежнему разрешены.
-
-    void callmetoo(){
-        System.out.println("Это конкретный метода.");
+class A {
+    // Вложенный интерфейс.
+    public interface NestedIF {
+        boolean isNotNegative(int x);
     }
 }
 
-class B extends A {
-    void callme() {
-        System.out.println("Реализация callme() в классе B.");
+// Класс B реализует вложенный интерфейс.
+class B implements A.NestedIF {
+    public boolean isNotNegative(int x) {
+        return x < 0 ? false : true;
     }
 }
-
-
