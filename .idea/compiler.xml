@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Module2" options="--add-exports java.desktop/sun.font=ALL-UNNAMED" />
+      <module name="Module2" options="" />
     </option>
   </component>
 </project>
