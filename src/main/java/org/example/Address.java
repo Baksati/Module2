@@ -16,6 +16,6 @@ public class Address {
         code = cd;
     }
     public String toString() {
-        return name + "\n" +street + "\n" + city + " " + state + " " + code;
+        return name + "\n" + street + "\n" + city + " " + state + " " + code;
     }
 }
