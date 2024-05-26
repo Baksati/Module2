@@ -5,7 +5,8 @@ import java.util.TreeSet;
 public class CompDemo {
     public static void main(String[] args) {
         // Создать древовидный набор.
-        TreeSet<String> ts = new TreeSet<>(new MyComp());
+        MyComp mc = new MyComp();
+        TreeSet<String> ts = new TreeSet<>(mc.reversed());
 
         // Добавить элементы в древовидный набор.
         ts.add("C");
