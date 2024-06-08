@@ -5,9 +5,9 @@ import java.util.Set;
 
 public class Find {
     public static boolean containsDuplicate(int[] array) {
-        Set<Integer> set = new HashSet<>();
+        Set<Integer> set = new HashSet<>(); //
         for(int nums : array) {
-            if(!set.contains(nums)) {
+            if(!set.add(nums)) {
                 return true;
             }
         }
