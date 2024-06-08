@@ -7,9 +7,7 @@ public class Find {
     public static boolean containsDuplicate(int[] array) {
         Set<Integer> set = new HashSet<>(); //
         for(int nums : array) {
-            if(!set.add(nums)) {
-                return true;
-            }
+            return true;
         }
         return false;
     }
