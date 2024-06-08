@@ -3,11 +3,11 @@ package org.example;
 import java.util.HashSet;
 import java.util.Set;
 
-public class FindDublicates {
-    public static boolean containsDublicates(int[] array) {
+public class Find {
+    public static boolean containsDuplicate(int[] array) {
         Set<Integer> set = new HashSet<>();
-        for (int element : array) {
-            if (!set.add(element)) {
+        for(int nums : array) {
+            if(!set.contains(nums)) {
                 return true;
             }
         }
@@ -16,9 +16,9 @@ public class FindDublicates {
 
     public static void main(String[] args) {
         int[] array1 = {4, 5, 6, 6, 8};
-        System.out.println(containsDublicates(array1));
+        System.out.println(containsDuplicate(array1));
 
         int[] array2 = {4, 5, 6, 7, 8};
-        System.out.println(containsDublicates(array2));
+        System.out.println(containsDuplicate(array2));
     }
 }
