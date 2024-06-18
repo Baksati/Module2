@@ -11,6 +11,7 @@ public class FindSumIndicesUnique {
 
         System.out.println(Arrays.toString(indices));
     }
+
     public static int[] FindSumIndicesUnique(int[] array, int sum) {
         int[] indices = new int[2];
 
@@ -18,11 +19,9 @@ public class FindSumIndicesUnique {
             int target = sum - array[i];
 
             int index = Arrays.binarySearch(array, i + 1, array.length, target);
-
             if (index >=0) {
                 indices[0] = array [i];
                 indices[1] = array [index];
-                return indices;
             }
         }
         return indices;
