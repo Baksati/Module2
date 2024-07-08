@@ -9,7 +9,7 @@ public class Exc2 {
             a = 42 / d;
             System.out.println("Это выводиться не будет.");
         } catch (ArithmeticException e) { // перехватить ошибку деления на ноль
-            System.out.println("Деление на наоль.");
+            System.out.println("Деление на ноль.");
         }
         System.out.println("После оператора catch.");
     }
