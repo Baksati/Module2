@@ -6,7 +6,7 @@ import java.util.List;
 
 public class AlgorithmsDemo {
     public static void main(String[] args) {
-        List arrayList = new ArrayList<>();
+        List<Object> arrayList = new ArrayList<>();
 
         arrayList.add(-1);
         arrayList.add(53);
