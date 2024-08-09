@@ -10,7 +10,7 @@ interface StringFunc2 {
 class MyStringOps {
     // Статический метод, который измеряет порядок следования
     // символов на противоположный.
-    static String strReverse(String str) {
+    String strReverse(String str) {
         String result = "";
         int i;
 
@@ -34,8 +34,11 @@ class MethodRefDemo {
         String inStr = "Lambdas add power to Java";
         String outStr;
 
+        // Создать объект MyStringOps.
+        MyStringOps strOps = new MyStringOps();
+
         // Передать в stringOp() ссылку на статический метод strReverse().
-        outStr = stringOp(MyStringOps :: strReverse, inStr);
+        outStr = stringOp(strOps :: strReverse, inStr);
 
         System.out.println("Исходная строка: " + inStr);
         System.out.println("Строка с противоположным порядком следования" +
