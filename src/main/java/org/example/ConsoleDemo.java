@@ -7,10 +7,9 @@ import java.io.*;
 public class ConsoleDemo {
     public static void main(String[] args) {
         String str;
-        Console con;
 
         // Получить ссылку на консоль.
-        con = System.console();
+        Console con = System.console();
         // Если консоль недоступна, тогда закончить работу.
         if (con == null) return;
 
