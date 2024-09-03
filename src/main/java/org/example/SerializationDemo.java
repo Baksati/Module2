@@ -19,10 +19,14 @@ public class SerializationDemo {
         catch (IOException e) {
             System.out.println("Во время сериализации возникло исключение: " + e);
         }
-        // Десериализация объекта.
+        // Десериализация объекта с использованием фильтра.
         try (ObjectInputStream objIStrm =
                 new ObjectInputStream(new FileInputStream("serial")))
         {
+            // Создать и добавить простой фильтр десериализации.
+            ObjectInputFilter myfilter =
+                    ObjectInputFilter.Config.createFilter("MyClass8;!*");
+            objIStrm.setObjectInputFilter(myfilter);
             MyClass8 object2 = (MyClass8) objIStrm.readObject();
             System.out.println("object2: " + object2);
         }
